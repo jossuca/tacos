@@ -43,6 +43,10 @@ Route::resources([
  Route::name("bussinesses_category_path")->get("category/{category}/bussinesses", "CategoriesController@bussinessesCategory");
  Route::name("category_bussiness_path")->get("bussiness/{bussiness}/category", "BussinnessesController@categoryBussines");
 
- Route::name("menu.create.path")->get('/menu/crear', 'MenusController@crate');
- Route::name("menu.store.path")->post('/menu/crear', 'MenusController@store');
+ Route::name("menu.create.path")->get('/menu/crear',        'MenusController@create');
+ Route::name("menu.store.path")->post('/menu/crear',        'MenusController@store');
+ Route::name("menu.edit.path")->get('/menu/{menu}/editar',  'MenusController@edit');
+ Route::name("menu.update.path")->put('/menu/{menu}',       'MenusController@update');
+ Route::name("menu.delete.path")->delete('/menu/{menu}',    'MenusController@delete');
+ Route::name("menu.path")->get('/menus',                    'MenusController@index');
 
