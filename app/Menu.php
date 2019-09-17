@@ -13,8 +13,7 @@ class Menu extends Model
       'name', 'sale', 'description', 'business_id'
     ];
 
-        //Manejo de relaciones con el ORM Eloquent
-    public function menus (){
-        return $this->hasMany(Menus::class);
+    public function business(){
+        return $this->belongsTo(Bussiness::class);
     }
 }

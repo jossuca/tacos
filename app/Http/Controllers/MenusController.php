@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Menu;
+use App\Bussiness;
 use Illuminate\Http\Request;
 
 class MenusController extends Controller{
@@ -17,7 +18,8 @@ class MenusController extends Controller{
     }
 
     public function create(){
-        return view("menus.create");
+        $bussiness=Bussiness::all();
+        return view("menus.create", compact("bussiness"));
     }
 
     public function store(Request $request){
@@ -25,7 +27,7 @@ class MenusController extends Controller{
         $menu=new menu;
         $menu->name=$request->name;
         $menu->sale=$request->sale;
-        $menu->description=$request->descripcion;
+        $menu->description=$request->description;
         $menu->business_id=$request->business_id;
         //dd ($menu); 
           
@@ -33,4 +35,6 @@ class MenusController extends Controller{
           $menu->save();
           return redirect()->route('menu.path');
     }
+
+    
 }

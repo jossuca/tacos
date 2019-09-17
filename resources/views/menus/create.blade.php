@@ -53,6 +53,17 @@
                             </div>
                         </div>
 
+                        <label for="business_id">
+                            Negocios
+                        </label>
+                        <select class="form-control" name="business_id">
+                            @foreach($bussiness as $business)
+                            <option value="{{$business->id}}">{{$business->address}}</option>
+                            @endforeach
+                        </select>
+
+                        </div>
+
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
